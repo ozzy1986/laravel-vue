@@ -1,0 +1,65 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-CR1mZlzR.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BCYqkw3h.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/views/FormView.vue",
+      "resources/js/views/ListView.vue",
+      "resources/js/views/NotFoundView.vue"
+    ],
+    "css": [
+      "assets/app-DcjCgE_3.css",
+      "assets/app-CR1mZlzR.css"
+    ]
+  },
+  "resources/js/views/FormView.vue": {
+    "file": "assets/FormView-Dyzvonlu.js",
+    "name": "FormView",
+    "src": "resources/js/views/FormView.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/FormView-Cmu_FTRa.css",
+      "assets/app-CR1mZlzR.css"
+    ]
+  },
+  "resources/js/views/ListView.vue": {
+    "file": "assets/ListView-CO0Wnv4A.js",
+    "name": "ListView",
+    "src": "resources/js/views/ListView.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/ListView-CL9at-Rc.css",
+      "assets/app-CR1mZlzR.css"
+    ]
+  },
+  "resources/js/views/NotFoundView.vue": {
+    "file": "assets/NotFoundView-BDFXcrqb.js",
+    "name": "NotFoundView",
+    "src": "resources/js/views/NotFoundView.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/NotFoundView-DdhFJLwB.css",
+      "assets/app-CR1mZlzR.css"
+    ]
+  }
+}
