@@ -71,8 +71,12 @@ async function handleSubmit() {
         toast.variant = 'success';
         toast.message = `Спасибо, ${feedback.name.split(' ')[0]}! Обращение сохранено.`;
 
-        setTimeout(() => {
-            router.push({ name: 'feedback.list' });
+        setTimeout(async () => {
+            try {
+                await router.push({ name: 'feedback.list' });
+            } catch {
+                window.location.assign('/list');
+            }
         }, 700);
     } catch (err) {
         if (err.status === 422 && err.errors) {

@@ -1,8 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
-
-const FormView = () => import('@/views/FormView.vue');
-const ListView = () => import('@/views/ListView.vue');
-const NotFoundView = () => import('@/views/NotFoundView.vue');
+import FormView from '@/views/FormView.vue';
+import ListView from '@/views/ListView.vue';
+import NotFoundView from '@/views/NotFoundView.vue';
 
 const routes = [
     {

@@ -9,56 +9,12 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-pU_Ag_qT.js",
+    "file": "assets/app-VGjam4jv.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
-    "dynamicImports": [
-      "resources/js/views/FormView.vue",
-      "resources/js/views/ListView.vue",
-      "resources/js/views/NotFoundView.vue"
-    ],
     "css": [
-      "assets/app-CKvRHMxj.css",
-      "assets/app-CR1mZlzR.css"
-    ]
-  },
-  "resources/js/views/FormView.vue": {
-    "file": "assets/FormView-Bh_20rBI.js",
-    "name": "FormView",
-    "src": "resources/js/views/FormView.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "resources/js/app.js"
-    ],
-    "css": [
-      "assets/FormView-Ysh8RffG.css",
-      "assets/app-CR1mZlzR.css"
-    ]
-  },
-  "resources/js/views/ListView.vue": {
-    "file": "assets/ListView-6iXZX4MP.js",
-    "name": "ListView",
-    "src": "resources/js/views/ListView.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "resources/js/app.js"
-    ],
-    "css": [
-      "assets/ListView-Db0Q8vHp.css",
-      "assets/app-CR1mZlzR.css"
-    ]
-  },
-  "resources/js/views/NotFoundView.vue": {
-    "file": "assets/NotFoundView-8hgclUsQ.js",
-    "name": "NotFoundView",
-    "src": "resources/js/views/NotFoundView.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "resources/js/app.js"
-    ],
-    "css": [
-      "assets/NotFoundView-CedauqDn.css",
+      "assets/app-DeZz9M6w.css",
       "assets/app-CR1mZlzR.css"
     ]
   }
