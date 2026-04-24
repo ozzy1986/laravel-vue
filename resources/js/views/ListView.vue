@@ -5,17 +5,6 @@ import { useStore } from 'vuex';
 const store = useStore();
 const items = computed(() => store.getters['feedback/all']);
 
-const sessionSnapshot = computed(() => {
-    if (typeof window === 'undefined') return 'n/a';
-    try {
-        const raw = window.sessionStorage.getItem('feedback.items.v1');
-        if (!raw) return 'empty';
-        return `${JSON.parse(raw).length} item(s)`;
-    } catch (e) {
-        return `error: ${e.message}`;
-    }
-});
-
 function clearAll() {
     if (window.confirm('Очистить все обращения из локального хранилища?')) {
         store.dispatch('feedback/clear');
@@ -54,10 +43,6 @@ function initials(name) {
                 На этой странице выводятся данные из Vuex-модуля. Запрос на получение
                 списка к бэкенду <strong>не</strong> выполняется — после обновления страницы
                 список очищается, как и требуется по заданию.
-            </p>
-            <p class="debug-banner">
-                DEBUG · Vuex items: <strong>{{ items.length }}</strong> ·
-                sessionStorage: <strong>{{ sessionSnapshot }}</strong>
             </p>
         </header>
 
@@ -146,18 +131,6 @@ function initials(name) {
     line-height: 1.15;
     margin: 0;
     letter-spacing: -0.02em;
-}
-
-.debug-banner {
-    margin: 0;
-    padding: 8px 12px;
-    border-radius: 8px;
-    background: #fff3cd;
-    color: #664d03;
-    border: 1px solid #ffe69c;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    font-size: 0.8rem;
-    width: fit-content;
 }
 
 .page__lead {
