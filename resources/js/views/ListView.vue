@@ -92,12 +92,6 @@ function initials(name) {
                             </time>
                         </header>
                         <p class="entry__message">{{ item.message }}</p>
-                        <footer class="entry__meta">
-                            <span class="tag">
-                                Сохранено через
-                                <strong>{{ item.driver }}</strong>
-                            </span>
-                        </footer>
                     </div>
                 </li>
             </TransitionGroup>
@@ -253,32 +247,6 @@ function initials(name) {
     line-height: 1.55;
     white-space: pre-wrap;
     word-break: break-word;
-}
-
-.entry__meta {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-.tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 10px;
-    border-radius: 999px;
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    font-size: 0.78rem;
-    color: var(--text-muted);
-}
-
-.tag strong {
-    color: var(--text);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    font-weight: 600;
-    font-size: 0.72rem;
 }
 
 .list-enter-from {
