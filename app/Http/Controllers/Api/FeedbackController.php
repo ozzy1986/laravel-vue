@@ -22,7 +22,7 @@ class FeedbackController extends Controller
 
         if (! $saved) {
             return response()->json([
-                'message' => 'Unable to save feedback at the moment. Please try again later.',
+                'message' => 'Сейчас не удалось сохранить обращение. Попробуйте позже.',
             ], Response::HTTP_SERVICE_UNAVAILABLE);
         }
 

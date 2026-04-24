@@ -16,7 +16,7 @@ export async function createFeedback(payload) {
         return data.data;
     } catch (error) {
         if (error.response?.status === 422) {
-            const wrapped = new Error('Validation failed.');
+            const wrapped = new Error('Ошибка валидации.');
             wrapped.errors = error.response.data?.errors ?? {};
             wrapped.status = 422;
             throw wrapped;
@@ -25,7 +25,7 @@ export async function createFeedback(payload) {
         const wrapped = new Error(
             error.response?.data?.message ||
                 error.message ||
-                'Unexpected network error.'
+                'Непредвиденная ошибка сети.'
         );
         wrapped.status = error.response?.status;
         throw wrapped;

@@ -9,7 +9,7 @@ const count = computed(() => store.getters['feedback/count']);
 <template>
     <header class="app-header" role="banner">
         <div class="app-header__inner">
-            <router-link :to="{ name: 'feedback.create' }" class="brand" aria-label="Feedback SPA home">
+            <router-link :to="{ name: 'feedback.create' }" class="brand" aria-label="Главная Feedback SPA">
                 <span class="brand__mark" aria-hidden="true">
                     <svg viewBox="0 0 24 24" width="22" height="22">
                         <path
@@ -21,12 +21,12 @@ const count = computed(() => store.getters['feedback/count']);
                 <span class="brand__text">Feedback<span>.</span>SPA</span>
             </router-link>
 
-            <nav class="app-nav" aria-label="Primary">
+            <nav class="app-nav" aria-label="Основная навигация">
                 <router-link :to="{ name: 'feedback.create' }" class="app-nav__link">
-                    <span>New</span>
+                    <span>Новая</span>
                 </router-link>
                 <router-link :to="{ name: 'feedback.list' }" class="app-nav__link">
-                    <span>Submitted</span>
+                    <span>Отправленные</span>
                     <span class="pill" :data-empty="count === 0">{{ count }}</span>
                 </router-link>
             </nav>

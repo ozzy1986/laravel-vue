@@ -16,13 +16,13 @@ import AppHeader from '@/components/AppHeader.vue';
         </main>
         <footer class="app-footer">
             <div class="app-footer__inner">
-                <span>Built with Laravel, Vue 3, Vuex &amp; Vue Router</span>
+                <span>Сделано на Laravel, Vue 3, Vuex и Vue Router</span>
                 <a
                     href="https://github.com/ozzy1986/laravel-vue"
                     target="_blank"
                     rel="noopener"
                 >
-                    source
+                    исходник
                 </a>
             </div>
         </footer>

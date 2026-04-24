@@ -13,19 +13,19 @@ const routes = [
         path: '/new',
         name: 'feedback.create',
         component: FormView,
-        meta: { title: 'New feedback', order: 1 },
+        meta: { title: 'Новое обращение', order: 1 },
     },
     {
         path: '/list',
         name: 'feedback.list',
         component: ListView,
-        meta: { title: 'Submitted feedback', order: 2 },
+        meta: { title: 'Отправленные обращения', order: 2 },
     },
     {
         path: '/:pathMatch(.*)*',
         name: 'not-found',
         component: NotFoundView,
-        meta: { title: 'Not found' },
+        meta: { title: 'Не найдено' },
     },
 ];
 
@@ -42,7 +42,7 @@ const router = createRouter({
 router.afterEach((to) => {
     const title = to.meta?.title;
     if (title) {
-        document.title = `${title} · Feedback SPA`;
+        document.title = `${title} · Форма обратной связи`;
     }
 });
 

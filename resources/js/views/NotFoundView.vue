@@ -6,13 +6,13 @@
     <section class="not-found">
         <div class="card not-found__card">
             <p class="eyebrow">404</p>
-            <h1 class="not-found__title">Page not found</h1>
+            <h1 class="not-found__title">Страница не найдена</h1>
             <p class="not-found__text">
-                The page you were looking for doesn't exist. Use the navigation above to
-                get back on track.
+                Страница, которую вы ищете, не существует. Используйте навигацию выше,
+                чтобы вернуться к форме.
             </p>
             <router-link :to="{ name: 'feedback.create' }" class="btn btn--primary">
-                Back to form
+                К форме
             </router-link>
         </div>
     </section>

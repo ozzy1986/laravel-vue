@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#0b1020">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="api-base" content="{{ url('/api') }}">
-    <meta name="description" content="A minimal feedback SPA built with Laravel, Vue, Vuex and Vue Router.">
+    <meta name="description" content="SPA-форма обратной связи на Laravel, Vue, Vuex и Vue Router.">
 
     <title>{{ config('app.name', 'Feedback') }}</title>
 

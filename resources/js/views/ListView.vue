@@ -6,7 +6,7 @@ const store = useStore();
 const items = computed(() => store.getters['feedback/all']);
 
 function clearAll() {
-    if (window.confirm('Clear all feedback from the local store?')) {
+    if (window.confirm('Очистить все обращения из локального хранилища?')) {
         store.dispatch('feedback/clear');
     }
 }
@@ -37,12 +37,12 @@ function initials(name) {
 <template>
     <section class="page">
         <header class="page__hero">
-            <p class="eyebrow">Step 2 · List</p>
-            <h1 class="page__title">Submitted feedback</h1>
+            <p class="eyebrow">Шаг 2 · Список</p>
+            <h1 class="page__title">Отправленные обращения</h1>
             <p class="page__lead">
-                This page renders everything stored in the Vuex feedback module. It does
-                <strong>not</strong> query the backend — refreshing the browser will reset
-                the list, as required by the task.
+                На этой странице выводятся данные из Vuex-модуля. Запрос на получение
+                списка к бэкенду <strong>не</strong> выполняется — после обновления страницы
+                список очищается, как и требуется по заданию.
             </p>
         </header>
 
@@ -62,11 +62,11 @@ function initials(name) {
                     />
                 </svg>
             </div>
-            <h2 class="empty__title">Nothing here yet</h2>
+            <h2 class="empty__title">Пока пусто</h2>
             <p class="empty__text">
-                Submit your first message on the
-                <router-link :to="{ name: 'feedback.create' }">New feedback</router-link>
-                page — it will appear here instantly.
+                Отправьте первое сообщение на странице
+                <router-link :to="{ name: 'feedback.create' }">Новая</router-link>,
+                и оно сразу появится здесь.
             </p>
         </div>
 
@@ -74,10 +74,10 @@ function initials(name) {
             <div class="list__toolbar">
                 <p class="list__count">
                     <strong>{{ items.length }}</strong>
-                    {{ items.length === 1 ? 'entry' : 'entries' }}
+                    {{ items.length === 1 ? 'запись' : 'записей' }}
                 </p>
                 <button class="btn btn--ghost" type="button" @click="clearAll">
-                    Clear list
+                    Очистить список
                 </button>
             </div>
 
@@ -94,7 +94,7 @@ function initials(name) {
                         <p class="entry__message">{{ item.message }}</p>
                         <footer class="entry__meta">
                             <span class="tag">
-                                Saved via
+                                Сохранено через
                                 <strong>{{ item.driver }}</strong>
                             </span>
                         </footer>

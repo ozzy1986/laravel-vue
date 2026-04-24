@@ -25,16 +25,16 @@ const nameInput = ref(null);
 const rules = {
     name: (value) => {
         const v = value.trim();
-        if (!v) return 'Please enter your name.';
-        if (v.length < 2) return 'Name should be at least 2 characters.';
-        if (v.length > 120) return 'Name should be at most 120 characters.';
+        if (!v) return 'Пожалуйста, введите имя.';
+        if (v.length < 2) return 'Имя должно содержать минимум 2 символа.';
+        if (v.length > 120) return 'Имя должно содержать не более 120 символов.';
         return '';
     },
     message: (value) => {
         const v = value.trim();
-        if (!v) return 'Please share your feedback.';
-        if (v.length < 2) return 'Feedback should be at least 2 characters.';
-        if (v.length > 5000) return 'Feedback should be at most 5000 characters.';
+        if (!v) return 'Пожалуйста, напишите обращение.';
+        if (v.length < 2) return 'Обращение должно содержать минимум 2 символа.';
+        if (v.length > 5000) return 'Обращение должно содержать не более 5000 символов.';
         return '';
     },
 };
@@ -69,7 +69,7 @@ async function handleSubmit() {
         errors.message = '';
 
         toast.variant = 'success';
-        toast.message = `Thanks, ${feedback.name.split(' ')[0]}! Your feedback was saved.`;
+        toast.message = `Спасибо, ${feedback.name.split(' ')[0]}! Обращение сохранено.`;
 
         setTimeout(() => {
             if (toast.message) router.push({ name: 'feedback.list' });
@@ -79,10 +79,10 @@ async function handleSubmit() {
             errors.name = err.errors.name?.[0] ?? '';
             errors.message = err.errors.message?.[0] ?? '';
             toast.variant = 'error';
-            toast.message = 'Please double-check the form.';
+            toast.message = 'Проверьте корректность заполнения формы.';
         } else {
             toast.variant = 'error';
-            toast.message = err.message || 'Something went wrong. Try again.';
+            toast.message = err.message || 'Что-то пошло не так. Попробуйте ещё раз.';
         }
     }
 }
@@ -93,17 +93,17 @@ const messageCount = computed(() => form.message.length);
 <template>
     <section class="page">
         <header class="page__hero">
-            <p class="eyebrow">Step 1 · Form</p>
-            <h1 class="page__title">Send your feedback</h1>
+            <p class="eyebrow">Шаг 1 · Форма</p>
+            <h1 class="page__title">Отправьте обращение</h1>
             <p class="page__lead">
-                Fill in the form below. The entry is sent to the backend and then stored in
-                the Vuex store, which powers the list on the next page.
+                Заполните форму ниже. Данные отправляются на бэкенд и затем сохраняются
+                во Vuex, откуда отображаются на второй странице.
             </p>
         </header>
 
         <form class="card form" novalidate @submit.prevent="handleSubmit">
             <div class="field" :class="{ 'field--error': errors.name }">
-                <label class="field__label" for="field-name">Your name</label>
+                <label class="field__label" for="field-name">Ваше имя</label>
                 <input
                     id="field-name"
                     ref="nameInput"
@@ -114,7 +114,7 @@ const messageCount = computed(() => form.message.length);
                     maxlength="120"
                     :aria-invalid="errors.name ? 'true' : 'false'"
                     :aria-describedby="errors.name ? 'field-name-error' : undefined"
-                    placeholder="e.g. Ivan Petrov"
+                    placeholder="например, Иван Петров"
                     @blur="errors.name = rules.name(form.name)"
                     @input="onFieldInput('name')"
                 />
@@ -125,7 +125,7 @@ const messageCount = computed(() => form.message.length);
 
             <div class="field" :class="{ 'field--error': errors.message }">
                 <label class="field__label" for="field-message">
-                    <span>Feedback</span>
+                    <span>Обращение</span>
                     <span class="field__counter" :data-limit="messageCount > 5000">
                         {{ messageCount }} / 5000
                     </span>
@@ -138,7 +138,7 @@ const messageCount = computed(() => form.message.length);
                     maxlength="5000"
                     :aria-invalid="errors.message ? 'true' : 'false'"
                     :aria-describedby="errors.message ? 'field-message-error' : undefined"
-                    placeholder="Tell us what's on your mind…"
+                    placeholder="Напишите ваш вопрос или сообщение…"
                     @blur="errors.message = rules.message(form.message)"
                     @input="onFieldInput('message')"
                 />
@@ -149,14 +149,14 @@ const messageCount = computed(() => form.message.length);
 
             <div class="form__footer">
                 <p class="form__hint">
-                    Your data is stored in-memory in the Vuex store. It disappears on page reload —
-                    that's part of the spec.
+                    Данные хранятся во Vuex только в памяти. После обновления страницы
+                    список очищается — это часть задания.
                 </p>
 
                 <button type="submit" class="btn btn--primary" :disabled="submitting">
-                    <span v-if="!submitting">Send feedback</span>
+                    <span v-if="!submitting">Отправить</span>
                     <span v-else class="spinner" aria-hidden="true"></span>
-                    <span v-if="submitting" class="sr-only">Sending…</span>
+                    <span v-if="submitting" class="sr-only">Отправка…</span>
                 </button>
             </div>
         </form>
