@@ -9,6 +9,9 @@
     <meta name="api-base" content="{{ url('/api') }}">
     <meta name="description" content="SPA-форма обратной связи на Laravel, Vue, Vuex и Vue Router.">
 
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.svg') }}">
+
     <title>{{ config('app.name', 'Feedback') }}</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])

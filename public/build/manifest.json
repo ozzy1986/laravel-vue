@@ -9,7 +9,7 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-BWwFCzv8.js",
+    "file": "assets/app-DyBOKwxJ.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -24,7 +24,7 @@
     ]
   },
   "resources/js/views/FormView.vue": {
-    "file": "assets/FormView-Bs24ptFo.js",
+    "file": "assets/FormView-DdIIEM0x.js",
     "name": "FormView",
     "src": "resources/js/views/FormView.vue",
     "isDynamicEntry": true,
@@ -32,12 +32,12 @@
       "resources/js/app.js"
     ],
     "css": [
-      "assets/FormView-CJQUnWYF.css",
+      "assets/FormView-Ysh8RffG.css",
       "assets/app-CR1mZlzR.css"
     ]
   },
   "resources/js/views/ListView.vue": {
-    "file": "assets/ListView-CLwkbO4s.js",
+    "file": "assets/ListView-DpXozxQJ.js",
     "name": "ListView",
     "src": "resources/js/views/ListView.vue",
     "isDynamicEntry": true,
@@ -50,7 +50,7 @@
     ]
   },
   "resources/js/views/NotFoundView.vue": {
-    "file": "assets/NotFoundView-BbNjqqBe.js",
+    "file": "assets/NotFoundView-8U0qZUIG.js",
     "name": "NotFoundView",
     "src": "resources/js/views/NotFoundView.vue",
     "isDynamicEntry": true,
