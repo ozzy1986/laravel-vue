@@ -1,6 +1,37 @@
 import { createFeedback } from '@/api/feedback';
 
 let localCounter = 0;
+const STORAGE_KEY = 'feedback.items.v1';
+
+function loadInitialItems() {
+    if (typeof window === 'undefined') {
+        return [];
+    }
+
+    try {
+        const raw = window.sessionStorage.getItem(STORAGE_KEY);
+        if (!raw) {
+            return [];
+        }
+
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed) ? parsed : [];
+    } catch {
+        return [];
+    }
+}
+
+function persistItems(items) {
+    if (typeof window === 'undefined') {
+        return;
+    }
+
+    try {
+        window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+    } catch {
+        // Ignore storage quota/privacy mode errors.
+    }
+}
 
 function makeClientId() {
     localCounter += 1;
@@ -8,7 +39,7 @@ function makeClientId() {
 }
 
 const state = () => ({
-    items: [],
+    items: loadInitialItems(),
     submitting: false,
     lastError: null,
 });
@@ -23,9 +54,11 @@ const getters = {
 const mutations = {
     ADD(state, feedback) {
         state.items.unshift(feedback);
+        persistItems(state.items);
     },
     RESET(state) {
         state.items = [];
+        persistItems(state.items);
     },
     SET_SUBMITTING(state, value) {
         state.submitting = Boolean(value);
