@@ -7,11 +7,7 @@ import AppHeader from '@/components/AppHeader.vue';
         <AppHeader />
         <main class="main" role="main">
             <div class="main__inner">
-                <router-view v-slot="{ Component }">
-                    <Transition name="fade" mode="out-in">
-                        <component :is="Component" />
-                    </Transition>
-                </router-view>
+                <router-view />
             </div>
         </main>
         <footer class="app-footer">
